@@ -12,19 +12,51 @@
     <script
         src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js">
     </script>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .ui.segment {
+            background-color: #1c1c1c !important;
+            color: white !important;
+        }
+
+        .ui.big.header {
+            color: white !important;
+        }
+
+        .ui.form label {
+            color: white !important;
+        }
+
+        /* Botões em cinza claro */
+        .custom-button {
+            background-color: #d3d3d3 !important;
+            color: black !important;
+        }
+
+        .custom-button:hover {
+            background-color: #bfbfbf !important;
+        }
+    </style>
+
 </head>
 
 <body>
 
     <div style="margin-top: 50px;" class="ui container">
 
-        <h1 class="ui center aligned header" style="color:#0ed30e">
+        <h1 class="ui center aligned header" style="color:white">
             Copa do Mundo 2026
         </h1>
 
         {% for lista in lista_dados %}
-            <h2 class="ui center aligned header" style="color:#073304">
+            <h2 class="ui center aligned header" style="color:#0ed30e">
                 {{lista[0]}}
+
             </h2>
         {% endfor %}
 
@@ -57,26 +89,26 @@
 
         <div style="display: flex; gap: 10px;">
 
-            <button class="ui blue button"
+            <button class="ui button custom-button"
                     type="button"
                     id="add">
                 Adicionar
             </button>
 
             <form class="ui form" action="/sort" method="post">
-                <button class="ui yellow button" type="submit">
+                <button class="ui button custom-button" type="submit">
                     Ordem alfabética
                 </button>
             </form>
 
             <form class="ui form" action="/reverse" method="post">
-                <button class="ui orange button" type="submit">
+                <button class="ui button custom-button" type="submit">
                     Ordem reversa
                 </button>
             </form>
 
             <form class="ui form" action="/clear" method="post">
-                <button class="ui red button" type="submit">
+                <button class="ui button custom-button" type="submit">
                     Apagar lista
                 </button>
             </form>
